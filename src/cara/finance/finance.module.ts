@@ -1,6 +1,5 @@
 import { NgModule }       from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common'
 import { CompanyComponent } from './company/company.component'
 import { CompanyListComponent } from './company-list/company-list.component'
 import { BasicInfoComponent } from './basic-info/basic-info.component'
@@ -11,7 +10,7 @@ import { FinanceRoutingModule } from './finance-routing.module'
 
 @NgModule({
     imports: [
-        BrowserModule,
+        CommonModule,
         FinanceRoutingModule
     ],
     declarations: [

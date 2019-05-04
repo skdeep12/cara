@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FinanceComponent } from './finance/finance.component';
 import { AppComponent } from './root.component'
-import { FinanceModule } from './finance/finance.module'
+//import { FinanceModule } from './finance/finance.module'
 
 const routes: Routes = [
-  {path: '', component: AppComponent },
-  {path: 'finance', component: FinanceComponent}
+  {
+    path: 'finance', 
+    loadChildren: './finance/finance.module#FinanceModule'
+  }
 ];
 //   {path: '', redirectTo: '/finance', pathMatch: 'full' },
 //   {path: '/finance', component: FinanceComponent},
@@ -16,8 +17,12 @@ const routes: Routes = [
 @NgModule({
 
   imports: [ 
-    FinanceModule, 
-    RouterModule.forRoot(routes)
+    //FinanceModule, 
+    RouterModule.forRoot(
+      routes,
+      {
+        enableTracing: false
+      })
   ],
 
   exports: [
