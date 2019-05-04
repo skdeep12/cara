@@ -1,8 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { AppRoutingModule } from './cara-routing.module';
-import { AppComponent } from '../components/root/root.component';
+
+import { AppComponent } from './root.component';
+
 
 @NgModule({
   declarations: [
@@ -10,9 +14,14 @@ import { AppComponent } from '../components/root/root.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(router: Router) {
+
+  }
+}
